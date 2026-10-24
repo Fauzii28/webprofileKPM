@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* =============================================================
+   📁 src/index.css
+   =============================================================
+   DIISI OLEH: Gatekeeper (faris)
+   DESKRIPSI: Gaya global yang berlaku untuk seluruh website.
+
+   ⚠️  Untuk styling per-section, gunakan Tailwind classes
+       langsung di JSX masing-masing section.
+       Jangan tambahkan CSS global di sini tanpa izin gatekeeper.
+   ============================================================= */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-950 text-white antialiased;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar       { width: 5px; }
+  ::-webkit-scrollbar-track { background: #030712; }
+  ::-webkit-scrollbar-thumb { background: #4c1d95; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #6d28d9; }
+
+  /* Selection */
+  ::selection { background: #7c3aed; color: #fff; }
+}
