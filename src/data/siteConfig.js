@@ -13,13 +13,13 @@ export const siteConfig = {
   name: "KPM",
   fullName: "Komunitas Pemrograman Mahasiswa",
   tagline: "Isi tagline KPM di sini...",
-  description: "Isi deskripsi singkat KPM di sini...",
-  founded: "20XX",           // Tahun berdiri
-  university: "Nama Universitas",
+  description: "Komunitas pemrograman mahasiswa Universitas Majalengka untuk belajar, berkarya, dan bertumbuh bersama.",
+  founded: "2022",           // Tahun berdiri
+  university: "Universitas Majalengka",
 
   // ── Kontak ──────────────────────────────────────────────────
-  email: "kpm@university.ac.id",
-  location: "Nama Universitas, Kota, Indonesia",
+  email: "kpm@unma.ac.id",
+  location: "Universitas Majalengka",
 
   // ── Social Media ─────────────────────────────────────────────
   // Isi dengan URL lengkap atau null jika belum ada

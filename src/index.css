@@ -16,6 +16,11 @@
     scroll-behavior: smooth;
   }
 
+  /* Offset anchor agar judul section tidak tertutup navbar fixed (h-16). */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
   body {
     @apply bg-gray-950 text-white antialiased;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -29,4 +34,11 @@
 
   /* Selection */
   ::selection { background: #7c3aed; color: #fff; }
+}
+
+/* Hormati preferensi pengguna yang mematikan animasi. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

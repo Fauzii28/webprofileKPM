@@ -9,7 +9,8 @@
 ```
 src/
 ├── data/
-│   └── siteConfig.js          ← ⚙️  Konfigurasi global (gatekeeper)
+│   ├── siteConfig.js          ← ⚙️  Konfigurasi global (gatekeeper)
+│   └── navLinks.js            ← 🧭 Menu Navbar & Footer (gatekeeper)
 ├── components/
 │   └── shared/
 │       ├── Navbar.jsx         ← 🔒 Shared - gatekeeper only
@@ -47,6 +48,16 @@ src/sections/06-members/membersData.js
 ```
 
 Tambahkan atau edit objek di array `MEMBERS` untuk memperbarui daftar anggota. Foto disimpan di `public/members/` lalu diisi lewat field `photo`.
+
+### 🧭 Sumber Menu Navigasi
+
+Menu di **Navbar** dan **Footer** memakai satu daftar yang sama:
+
+```
+src/data/navLinks.js
+```
+
+Ubah label atau urutan menu di file itu; jangan menduplikasi daftar link di komponen.
 
 ---
 
@@ -97,6 +108,6 @@ Baca [CONTRIBUTING.md](./CONTRIBUTING.md) untuk panduan lengkap.
 
 ## 🔒 Aturan
 
-- File di `src/data/siteConfig.js` dan `src/components/shared/` hanya boleh diedit oleh **gatekeeper**
+- File di `src/data/siteConfig.js`, `src/data/navLinks.js`, dan `src/components/shared/` hanya boleh diedit oleh **gatekeeper**
 - Setiap tim hanya mengerjakan folder section masing-masing
 - Semua perubahan harus melalui **Pull Request** — tidak boleh push langsung ke `main`
