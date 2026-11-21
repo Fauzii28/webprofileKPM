@@ -18,6 +18,7 @@ Setiap section sudah punya tim masing-masing. **Kamu hanya boleh mengerjakan fol
 | `src/sections/06-members/` | Anggota | **Semua anggota** (isi data sendiri) |
 | `src/sections/07-contact/` | Kontak & FAQ | Tim Contact |
 | `src/data/siteConfig.js` | Config Global | 🔒 Gatekeeper only |
+| `src/data/navLinks.js` | Menu Navbar & Footer | 🔒 Gatekeeper only |
 | `src/components/shared/` | Navbar & Footer | 🔒 Gatekeeper only |
 | `src/App.jsx` | Root App | 🔒 Gatekeeper only |
 

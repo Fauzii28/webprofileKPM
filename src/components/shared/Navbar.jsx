@@ -6,28 +6,13 @@
 //
 // ⚠️  PERHATIAN:
 //   - Ini komponen SHARED — jangan diedit tanpa izin gatekeeper
-//   - Untuk menambah menu baru, edit array `navLinks` di bawah
+//   - Untuk menambah menu baru, edit `src/data/navLinks.js`
 //   - Kalau mau ganti logo/branding, edit bagian Logo di bawah
 // =============================================================
 
 import { useState, useEffect } from "react";
 import { siteConfig } from "../../data/siteConfig";
-
-// ── Daftar menu navigasi ────────────────────────────────────────
-// Sesuaikan href dengan id section yang ada
-const navLinks = [
-  { label: "Beranda",  href: "#hero" },
-  { label: "Tentang",  href: "#about" },
-  { label: "Divisi",   href: "#divisions" },
-  { label: "Program",  href: "#programs" },
-  { label: "Galeri",   href: "#gallery" },
-  { label: "Anggota",  href: "#members" },
-  { label: "Kontak",   href: "#contact" },
-];
-
-function smoothScroll(href) {
-  document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-}
+import { navLinks } from "../../data/navLinks";
 
 export default function Navbar() {
   const [isOpen, setIsOpen]     = useState(false);
@@ -39,11 +24,8 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleClick = (e, href) => {
-    e.preventDefault();
-    setIsOpen(false);
-    smoothScroll(href);
-  };
+  // Tutup menu mobile; anchor dibiarkan native agar hash URL ikut berubah.
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -54,7 +36,7 @@ export default function Navbar() {
 
           {/* ── Logo ──────────────────────────────────────────── */}
           {/* TODO (gatekeeper): Ganti logo KPM di sini */}
-          <a href="#hero" onClick={(e) => handleClick(e, "#hero")} className="flex items-center gap-2 group">
+          <a href="#hero" onClick={closeMenu} className="flex items-center gap-2 group">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-500 to-cyan-500 flex items-center justify-center font-bold text-white text-sm shadow-lg group-hover:scale-110 transition-transform">
               {siteConfig.name}
             </div>
@@ -69,7 +51,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={(e) => handleClick(e, link.href)}
+                onClick={closeMenu}
                 className="px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-all font-medium"
               >
                 {link.label}
@@ -81,7 +63,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <a
               href="#contact"
-              onClick={(e) => handleClick(e, "#contact")}
+              onClick={closeMenu}
               className="px-4 py-2 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-600 text-white text-sm font-semibold hover:opacity-90 hover:scale-105 transition-all shadow-lg shadow-violet-500/25"
             >
               Bergabung
@@ -110,7 +92,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              onClick={(e) => handleClick(e, link.href)}
+              onClick={closeMenu}
               className="px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/10 transition-all font-medium"
             >
               {link.label}
@@ -118,7 +100,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contact"
-            onClick={(e) => handleClick(e, "#contact")}
+            onClick={closeMenu}
             className="mt-2 px-4 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-semibold text-center"
           >
             Bergabung Sekarang
