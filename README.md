@@ -38,6 +38,16 @@ src/
         └── contactData.js
 ```
 
+### 📌 Lokasi Data Anggota
+
+Data section **Members** diambil dari konstanta `MEMBERS` (statis, tanpa fetch/backend):
+
+```
+src/sections/06-members/membersData.js
+```
+
+Tambahkan atau edit objek di array `MEMBERS` untuk memperbarui daftar anggota. Foto disimpan di `public/members/` lalu diisi lewat field `photo`.
+
 ---
 
 ## ⚡ Setup & Menjalankan Project
