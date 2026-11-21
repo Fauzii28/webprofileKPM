@@ -13,7 +13,7 @@ export const siteConfig = {
   name: "KPM",
   fullName: "Komunitas Pemrograman Mahasiswa",
   tagline: "Isi tagline KPM di sini...",
-  description: "Isi deskripsi singkat KPM di sini...",
+  description: "Komunitas pemrograman mahasiswa Universitas Majalengka untuk belajar, berkarya, dan bertumbuh bersama.",
   founded: "2022",           // Tahun berdiri
   university: "Universitas Majalengka",
 
